@@ -1,0 +1,621 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: #000;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav .logo a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Hide dropdown by default */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    border-top: 2px solid #fff; 
+}
+
+/* Dropdown links */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8rem;
+    text-align: left;
+    transition: 0.3s;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-content a:hover {
+    background-color: #333;
+    padding-left: 20px;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Mobile Dropdown adjustment */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        display: none; /* keep hidden */
+        background-color: #111;
+        box-shadow: none;
+        border-top: none;
+    }
+
+    /* Show when tapped (focus) */
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #f4f4f4; 
+    padding: 0 10%;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+}
+
+/* Grid for Gallery/Projects */
+.container {
+    padding: 50px 10%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+}
+
+.card img {
+    width: 60%;
+    height: auto;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.card img:hover {
+    filter: grayscale(0%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* About Page Specific Styles */
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 90vh;
+    padding: 5% 10%;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 60%;
+    height: auto;
+    border: 10px solid #000; 
+    transition: 0.5s;
+}
+
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-left: 8px solid #000;
+    padding-left: 15px;
+}
+
+.about-content h3 {
+    margin: 20px 0 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #333;
+    text-align: justify;
+}
+
+/* Mobile adjustments for About Page */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 20px 5%;
+        text-align: center;
+    }
+    .about-content h2 {
+        font-size: 2rem;
+        border-left: none;
+        padding-left: 0;
+        border-bottom: 4px solid #000;
+        display: inline-block;
+    }
+}
+
+/* Gallery Layout */
+.gallery-container {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.gallery-container h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+/* Requirement: Grid Layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    border: 2px solid #000;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover; 
+    transition: 0.5s;
+    display: block;
+}
+
+
+/* Requirement: Image Captions */
+.caption {
+    padding: 20px;
+}
+
+.caption h4 {
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.caption p {
+    font-size: 0.85rem;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .gallery-container {
+        padding: 40px 5%;
+    }
+}
+
+/* Skills Page Layout */
+.skills-container {
+    padding: 60px 10%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-container h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.skill-category {
+    margin-bottom: 50px;
+}
+
+.skill-category h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* Skill Bars */
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.progress-line {
+    height: 10px;
+    width: 100%;
+    background: #e0e0e0;
+    position: relative;
+}
+
+.progress-line span {
+    height: 100%;
+    background: #000; 
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .skills-container {
+        padding: 40px 5%;
+    }
+    .skills-container h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Zig-Zag Skills Layout */
+.skills-zigzag {
+    padding: 60px 10%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 80px;
+}
+
+/* Reverses the order for the 2nd row (Picture on right) */
+.skill-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.skill-text {
+    flex: 1;
+}
+
+.skill-text h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-bottom: 4px solid #000;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.skill-text ul {
+    list-style: none;
+}
+
+.skill-text ul li {
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.skill-pic {
+    flex: 1;
+}
+
+.skill-pic img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border: 1px solid #000;
+    filter: grayscale(100%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .skill-row, .skill-row.reverse {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .skill-pic img {
+        height: 300px;
+    }
+}
+
+/* Hobbies Page Styles */
+.hobbies-section {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.hobbies-section h2 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.hobby-card {
+    background: #fff;
+    border: 2px solid #000; 
+    padding: 30px;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hobby-card:hover {
+    background: #000;
+    color: #fff;
+}
+
+.hobby-card h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Switches border color on hover so it stays visible */
+.hobby-card:hover h3 {
+    border-bottom-color: #fff;
+}
+
+.hobby-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .hobbies-section {
+        padding: 40px 5%;
+    }
+}
+
+ /* This ensures the specific layout you want for this page */
+        .hobby-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .hobby-card img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+
+/* Specific styles for Love Life layout */
+        .love-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 20px 10%;
+        }
+
+        .love-gallery img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border: 2px solid #000;
+            filter: grayscale(100%);
+            transition: 0.3s;
+        }
+
+        .love-gallery img:hover {
+            filter: grayscale(0%);
+        }
+
+        .centered-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px;
+            border: 2px solid #000;
+            text-align: center;
+            background: #fff;
+        }
+
+        .centered-container h3 {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #000;
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .love-gallery {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 10px 5%;
+            }
+            .centered-container {
+                margin: 20px 5%;
+                padding: 20px;
+            }
+        }
+
+                .friends-section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        /* 4 Portrait Images Grid */
+        .portrait-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .portrait-grid img {
+            width: 100%;
+            height: 450px; 
+            object-fit: cover;
+            border: 2px solid #000;
+            transition: 0.3s;
+        }
+
+        /* 4 Landscape Images Grid */
+        .landscape-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .landscape-grid img {
+            width: 100%;
+            height: 250px; 
+            object-fit: cover;
+            border: 2px solid #000;
+            transition: 0.3s;
+        }
+
+
+        .friends-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 2px solid #000;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .portrait-grid, .landscape-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .portrait-grid img { height: 300px; }
+            .landscape-grid img { height: 180px; }
+        }
