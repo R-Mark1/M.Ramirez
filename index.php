@@ -11,7 +11,7 @@
     <nav>
         <div class="logo"><a href="index.php">M. RAMIREZ</a></div>
         <ul>
-            <li><a href="index.php">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="skills.html">Skills</a></li>
